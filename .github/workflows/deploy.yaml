@@ -1,0 +1,21 @@
+name: Build and deploy the application to Koyeb
+
+on:
+  schedule:
+    - cron: '42 10 * * *'
+  push:
+    branches:
+      - '*'
+
+jobs:
+  deploy:
+    concurrency: "${{ github.ref_name }}"
+    runs-on: ubuntu-latest
+    steps:
+      - name: Build and deploy the application
+        uses: koyeb/action-git-deploy@v1
+        with:
+          api-token: "${{ secrets.KOYEB_TOKEN }}"
+          service-env: "PORT=8000"
+          service-ports: "8000:http"
+          service-routes: "/:8000"
