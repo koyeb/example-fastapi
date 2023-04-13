@@ -12,4 +12,4 @@ jobs:
        - name: Cleanup Koyeb application
          uses: koyeb/action-git-deploy/cleanup@v1
          with:
-           api-token: "${{ secrets.KOYEB_TOKEN }}"
+           api-token: "${{ secrets.KOYEB_EXAMPLES_APPS_TOKEN }}"
