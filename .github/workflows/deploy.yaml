@@ -9,7 +9,9 @@ on:
 
 jobs:
   deploy:
-    concurrency: "${{ github.ref_name }}"
+    concurrency:
+      group: "${{ github.ref_name }}"
+      cancel-in-progress: true
     runs-on: ubuntu-latest
     steps:
       - name: Build and deploy the application
