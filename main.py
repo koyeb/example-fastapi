@@ -11,7 +11,6 @@ def read_root():
     co = cohere.Client(api_key=os.getenv('COHERE_API_KEY'))
     from dotenv import load_dotenv, find_dotenv
     _ = load_dotenv(find_dotenv())
-
 def get_completion(prompt, temp=0):
     response = co.generate(
         model='command-r-plus',
