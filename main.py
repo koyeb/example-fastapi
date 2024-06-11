@@ -20,7 +20,7 @@ def read_root():
             prompt=prompt,
             max_tokens=200,
             temperature=temp)
-          return response.generations[0].text
+            return response.generations[0].text
         
     Apex_Data = f"""Feature,Status,Point_of_contact,Comment
     Decimal Precision,In Progress,Murali,50% Complete
