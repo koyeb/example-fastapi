@@ -3,8 +3,6 @@ from typing import Union
 from fastapi import FastAPI
 
 app = FastAPI()
-
-
 @app.get("/")
 def read_root():
     import os
@@ -20,7 +18,7 @@ def get_completion(prompt, temp=0):
         prompt=prompt,
         max_tokens=200,
         temperature=temp)
-    return response.generations[0].text
+return response.generations[0].text
         
 Apex_Data = f"""Feature,Status,Point_of_contact,Comment
 Decimal Precision,In Progress,Murali,50% Complete
